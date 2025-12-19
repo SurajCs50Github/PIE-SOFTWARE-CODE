@@ -1,0 +1,212 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00080000         xr
+RAM              0x20000000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccvT64ND.o
+LOAD /tmp/ccErfRPI.o
+LOAD /tmp/ccDuyknu.o
+LOAD /tmp/ccNgEAi8.o
+LOAD /tmp/ccJ1GE2N.o
+LOAD /tmp/cc5pcbCX.o
+LOAD /tmp/cc34Ituq.o
+LOAD /tmp/ccPZT5Ly.o
+
+.isr_vector     0x08000000        0x8
+ *(.isr_vector)
+ .isr_vector    0x08000000        0x8 /tmp/ccvT64ND.o
+                0x08000000                vector_table
+
+.text           0x08000008      0x600
+                0x08000008                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000008       0x58 /tmp/ccvT64ND.o
+                0x08000008                Reset_Handler
+ .text          0x08000060       0x74 /tmp/ccErfRPI.o
+                0x08000060                main
+ .text          0x080000d4      0x134 /tmp/ccDuyknu.o
+                0x080000d4                initializeGPIOA
+                0x080000f0                setPinDigitalOutput
+                0x08000138                setPinAnalog
+                0x08000168                setPin
+                0x080001b8                togglePin
+                0x080001e4                flashPin_10
+ .text          0x08000208       0x48 /tmp/ccNgEAi8.o
+                0x08000208                delay
+ .text          0x08000250      0x138 /tmp/ccJ1GE2N.o
+                0x08000250                transmitPacket
+ .text          0x08000388      0x11e /tmp/cc5pcbCX.o
+                0x08000388                initBuffer
+                0x080003c0                calculateCRC_8
+                0x08000434                createPacket
+ *fill*         0x080004a6        0x2 
+ .text          0x080004a8       0xd4 /tmp/cc34Ituq.o
+                0x080004a8                startTimer
+                0x080004f4                getTicks
+ .text          0x0800057c       0x74 /tmp/ccPZT5Ly.o
+                0x0800057c                systemClock_20MHz
+ *(.rodata)
+ .rodata        0x080005f0       0x15 /tmp/ccErfRPI.o
+                0x080005f0                song
+                0x08000608                        . = ALIGN (0x4)
+ *fill*         0x08000605        0x3 
+                0x08000608                        _etext = .
+
+.glue_7         0x08000608        0x0
+ .glue_7        0x08000608        0x0 linker stubs
+
+.glue_7t        0x08000608        0x0
+ .glue_7t       0x08000608        0x0 linker stubs
+
+.vfp11_veneer   0x08000608        0x0
+ .vfp11_veneer  0x08000608        0x0 linker stubs
+
+.v4_bx          0x08000608        0x0
+ .v4_bx         0x08000608        0x0 linker stubs
+
+.iplt           0x08000608        0x0
+ .iplt          0x08000608        0x0 /tmp/ccvT64ND.o
+
+.rel.dyn        0x08000608        0x0
+ .rel.iplt      0x08000608        0x0 /tmp/ccvT64ND.o
+
+.data           0x20000000        0x0 load address 0x08000608
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 /tmp/ccvT64ND.o
+ .data          0x20000000        0x0 /tmp/ccErfRPI.o
+ .data          0x20000000        0x0 /tmp/ccDuyknu.o
+ .data          0x20000000        0x0 /tmp/ccNgEAi8.o
+ .data          0x20000000        0x0 /tmp/ccJ1GE2N.o
+ .data          0x20000000        0x0 /tmp/cc5pcbCX.o
+ .data          0x20000000        0x0 /tmp/cc34Ituq.o
+ .data          0x20000000        0x0 /tmp/ccPZT5Ly.o
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x08000608
+ .igot.plt      0x20000000        0x0 /tmp/ccvT64ND.o
+
+.bss            0x20000000       0x10 load address 0x08000608
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss)
+ .bss           0x20000000        0x0 /tmp/ccvT64ND.o
+ .bss           0x20000000        0x0 /tmp/ccErfRPI.o
+ .bss           0x20000000        0x0 /tmp/ccDuyknu.o
+ .bss           0x20000000        0x0 /tmp/ccNgEAi8.o
+ .bss           0x20000000        0x0 /tmp/ccJ1GE2N.o
+ .bss           0x20000000        0x0 /tmp/cc5pcbCX.o
+ .bss           0x20000000       0x10 /tmp/cc34Ituq.o
+ .bss           0x20000010        0x0 /tmp/ccPZT5Ly.o
+                0x20000010                        . = ALIGN (0x4)
+                0x20000010                        _ebss = .
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x9b6
+ .debug_info    0x00000000      0x102 /tmp/ccvT64ND.o
+ .debug_info    0x00000102      0x1a6 /tmp/ccErfRPI.o
+ .debug_info    0x000002a8      0x16e /tmp/ccDuyknu.o
+ .debug_info    0x00000416       0xcf /tmp/ccNgEAi8.o
+ .debug_info    0x000004e5      0x186 /tmp/ccJ1GE2N.o
+ .debug_info    0x0000066b      0x1d8 /tmp/cc5pcbCX.o
+ .debug_info    0x00000843       0xe8 /tmp/cc34Ituq.o
+ .debug_info    0x0000092b       0x8b /tmp/ccPZT5Ly.o
+
+.debug_abbrev   0x00000000      0x5a9
+ .debug_abbrev  0x00000000       0xbd /tmp/ccvT64ND.o
+ .debug_abbrev  0x000000bd      0x109 /tmp/ccErfRPI.o
+ .debug_abbrev  0x000001c6       0xc8 /tmp/ccDuyknu.o
+ .debug_abbrev  0x0000028e       0x92 /tmp/ccNgEAi8.o
+ .debug_abbrev  0x00000320       0xda /tmp/ccJ1GE2N.o
+ .debug_abbrev  0x000003fa       0xde /tmp/cc5pcbCX.o
+ .debug_abbrev  0x000004d8       0x7f /tmp/cc34Ituq.o
+ .debug_abbrev  0x00000557       0x52 /tmp/ccPZT5Ly.o
+
+.debug_aranges  0x00000000      0x100
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccvT64ND.o
+ .debug_aranges
+                0x00000020       0x20 /tmp/ccErfRPI.o
+ .debug_aranges
+                0x00000040       0x20 /tmp/ccDuyknu.o
+ .debug_aranges
+                0x00000060       0x20 /tmp/ccNgEAi8.o
+ .debug_aranges
+                0x00000080       0x20 /tmp/ccJ1GE2N.o
+ .debug_aranges
+                0x000000a0       0x20 /tmp/cc5pcbCX.o
+ .debug_aranges
+                0x000000c0       0x20 /tmp/cc34Ituq.o
+ .debug_aranges
+                0x000000e0       0x20 /tmp/ccPZT5Ly.o
+
+.debug_line     0x00000000      0x737
+ .debug_line    0x00000000       0xa0 /tmp/ccvT64ND.o
+ .debug_line    0x000000a0       0xdb /tmp/ccErfRPI.o
+ .debug_line    0x0000017b      0x115 /tmp/ccDuyknu.o
+ .debug_line    0x00000290       0xa9 /tmp/ccNgEAi8.o
+ .debug_line    0x00000339      0x156 /tmp/ccJ1GE2N.o
+ .debug_line    0x0000048f      0x113 /tmp/cc5pcbCX.o
+ .debug_line    0x000005a2       0xbd /tmp/cc34Ituq.o
+ .debug_line    0x0000065f       0xd8 /tmp/ccPZT5Ly.o
+
+.debug_str      0x00000000      0x334
+ .debug_str     0x00000000      0x334 /tmp/ccvT64ND.o
+                                0x177 (size before relaxing)
+ .debug_str     0x00000334      0x1cd /tmp/ccErfRPI.o
+ .debug_str     0x00000334      0x1a2 /tmp/ccDuyknu.o
+ .debug_str     0x00000334      0x178 /tmp/ccNgEAi8.o
+ .debug_str     0x00000334      0x1b4 /tmp/ccJ1GE2N.o
+ .debug_str     0x00000334      0x1b4 /tmp/cc5pcbCX.o
+ .debug_str     0x00000334      0x180 /tmp/cc34Ituq.o
+ .debug_str     0x00000334      0x14d /tmp/ccPZT5Ly.o
+
+.comment        0x00000000       0x1e
+ .comment       0x00000000       0x1e /tmp/ccvT64ND.o
+                                 0x1f (size before relaxing)
+ .comment       0x0000001e       0x1f /tmp/ccErfRPI.o
+ .comment       0x0000001e       0x1f /tmp/ccDuyknu.o
+ .comment       0x0000001e       0x1f /tmp/ccNgEAi8.o
+ .comment       0x0000001e       0x1f /tmp/ccJ1GE2N.o
+ .comment       0x0000001e       0x1f /tmp/cc5pcbCX.o
+ .comment       0x0000001e       0x1f /tmp/cc34Ituq.o
+ .comment       0x0000001e       0x1f /tmp/ccPZT5Ly.o
+
+.ARM.attributes
+                0x00000000       0x2e
+ .ARM.attributes
+                0x00000000       0x2e /tmp/ccvT64ND.o
+ .ARM.attributes
+                0x0000002e       0x2e /tmp/ccErfRPI.o
+ .ARM.attributes
+                0x0000005c       0x2e /tmp/ccDuyknu.o
+ .ARM.attributes
+                0x0000008a       0x2e /tmp/ccNgEAi8.o
+ .ARM.attributes
+                0x000000b8       0x2e /tmp/ccJ1GE2N.o
+ .ARM.attributes
+                0x000000e6       0x2e /tmp/cc5pcbCX.o
+ .ARM.attributes
+                0x00000114       0x2e /tmp/cc34Ituq.o
+ .ARM.attributes
+                0x00000142       0x2e /tmp/ccPZT5Ly.o
+
+.debug_frame    0x00000000      0x2ec
+ .debug_frame   0x00000000       0x30 /tmp/ccvT64ND.o
+ .debug_frame   0x00000030       0x30 /tmp/ccErfRPI.o
+ .debug_frame   0x00000060       0xf4 /tmp/ccDuyknu.o
+ .debug_frame   0x00000154       0x3c /tmp/ccNgEAi8.o
+ .debug_frame   0x00000190       0x40 /tmp/ccJ1GE2N.o
+ .debug_frame   0x000001d0       0x84 /tmp/cc5pcbCX.o
+ .debug_frame   0x00000254       0x68 /tmp/cc34Ituq.o
+ .debug_frame   0x000002bc       0x30 /tmp/ccPZT5Ly.o
